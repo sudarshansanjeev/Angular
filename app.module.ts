@@ -1,27 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { RestServiceService } from './rest-service.service';
-
+import {RestService } from './rest.service';
+import {MyCompComponent} from './my-comp/my-comp.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    SignUpComponent
+    MyCompComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     HttpModule
   ],
-  providers: [RestServiceService],
+  providers: [RestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

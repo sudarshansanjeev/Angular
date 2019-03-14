@@ -1,0 +1,38 @@
+<h1> Http Service Demo using opbservable </h1>
+<hr>
+<h1> Getting a Record</h1>
+<h2>
+    Enter Id: <input type="text" #myinput> <br>
+    <button type="button" (click) = "getItem(myinput.value)"> GET USER </button>
+    <br> <br>
+    <span> {{ errorMsg}} </span>
+    <br>
+    User name: {{ user.name}}
+  
+</h2>
+<hr><hr>
+<h2>
+    Enter Id : <input type="text" #id1> <br>
+    Enter User Name : <input type="text" #name> <br>
+    Enter Age : <input type= "number" #age > <br>
+    <button type="button" (click) = "postItem(id1.value,name.value,age.value)"> ADD USER </button>  
+</h2>
+<hr><hr>
+<h1>Delete User</h1>
+<h2>
+    Enter User id to Delete : 
+    <input type="text" #id1> <br>
+    <button type="button" (click) = "deleteItem(id1.value)"> DELETE USER </button>  
+    <span> {{ errorMsgDel}} </span>
+    <br>
+</h2>
+
+<hr><hr>
+<h1>Display All Users</h1>
+<h2>
+    <button type="button" (click) = "displayAllItems()">Display All Users </button>
+    <ul>
+        <li *ngFor="let user of users"  > {{ user.name }}</li>
+    </ul>  
+</h2>
+
