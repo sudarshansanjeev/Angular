@@ -1,0 +1,27 @@
+<fieldset>
+<form class="container"  [formGroup]="form" (ngSubmit)="onSubmit(form.value)" >
+   firstname:                  <input type="text" name="firstname" placeholder="firstname" formControlName="firstname"> <br>
+   
+   lastname:                   <input type="text" name="lastname" placeholder="lastname" formControlName="lastname"> <br>
+   
+   age:                        <input type="number" name="age" placeholder="age" formControlName="age"><br>
+    
+   MobileNumber :              <input type="number" placeholder="mobilenumber" formControlName="mobilenumber"> <br>
+   
+   Aadhar:                     <input type="number" placeholder="aadhar" formControlName="aadhar"> <br>
+   
+   Email:        <input type="text" name="email" placeHolder="email" formControlName="email"> <br>
+   
+   UserName:                   <input type="text" name="username" placeholder="username" formControlName="username"> <br>
+  
+   Password : <input type="password" placeHolder="password" formControlName="password" #password > <br>
+  
+   confirmpassword  <input type="password" placeHolder="confirmpassword" formControlName="confirmpassword" #confirmpassword> <br>
+  
+   <div *ngIf="password.value!=confirmpassword.value">Password dont match</div> 
+  
+   <input type="submit" value="SUBMIT" [disabled]="!form.valid">
+
+</form>
+
+</fieldset>
